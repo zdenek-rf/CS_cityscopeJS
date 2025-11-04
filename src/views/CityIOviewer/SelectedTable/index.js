@@ -11,7 +11,7 @@ export default function SelectedTable(props) {
   // for projection mapping use this endpoint
   // https://cityscope.media.mit.edu/CS_cityscopeJS_projection_mapping/?cityscope=TABLE_NAME
   const projectionEndpoint =
-    generalSettings.csjsURL + "_projection_mapping/?cityscope=";
+    generalSettings.projectionMappingURL + "/?projection_mapping&cityscope=";
 
   const [open, setOpen] = useState(false);
 

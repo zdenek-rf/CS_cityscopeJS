@@ -37,8 +37,20 @@ const getCSJSLocation = () => {
   return cityscopejs_local_url;
 };
 
+// get the projection mapping location 
+const getProjectionMappingLocation = () => {
+  const location = window.location;
+  const parsed = queryString.parse(location.search);
+  const projection_mapping_url =
+    "cityscopejs_local" in parsed
+      ? "http://localhost:3000"
+      : "https://cityscope.media.mit.edu/CS_cityscopeJS_projection_mapping";
+  return projection_mapping_url;
+};
+
 export const generalSettings = {
   csjsURL: getCSJSLocation(),
+  projectionMappingURL: getProjectionMappingLocation(),
 };
 
 export const cityIOSettings = {
